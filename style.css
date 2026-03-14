@@ -60,4 +60,65 @@
  
  /* Animations */
  @keyframes load { to { width: 100%; } }
- @keyframes blink { 50% { opacity: 0; } }
+ @keyframes blink { 50% { opacity: 0; } }:root {
+     --primary: #00FF41;
+     --bg: #030303;
+     --border: rgba(0, 255, 65, 0.15);
+     --glass: rgba(255, 255, 255, 0.02);
+ }
+ 
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+ body { background: var(--bg); color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; }
+ 
+ /* Backgrounds */
+ #matrix-canvas { position: fixed; inset: 0; z-index: -2; opacity: 0.1; }
+ #globe-canvas { position: fixed; right: -100px; top: 0; width: 100vw; height: 100vh; z-index: -1; opacity: 0.35; }
+ 
+ /* Intro Overlay */
+ #intro-overlay {
+     position: fixed; inset: 0; background: #000; z-index: 9999;
+     display: flex; align-items: center; justify-content: center;
+ }
+ .scanner-text { font-family: 'Fira Code', monospace; color: var(--primary); font-size: 0.8rem; }
+ .progress-bar { width: 300px; height: 1px; background: #111; margin-top: 15px; }
+ .progress-fill { width: 0; height: 100%; background: var(--primary); animation: load 2s forwards; }
+ 
+ /* Nav */
+ .navbar { position: fixed; top: 0; width: 100%; padding: 30px 8%; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+ .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: 2px; }
+ .logo span { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
+ .status-indicator { font-family: 'Fira Code'; font-size: 0.7rem; color: var(--primary); border: 1px solid var(--primary); padding: 5px 12px; border-radius: 50px; }
+ 
+ /* Sections */
+ .section { padding: 100px 10%; }
+ .sec-title { font-family: 'Fira Code'; color: var(--primary); margin-bottom: 40px; font-size: 1.2rem; }
+ 
+ /* Hero */
+ .hero { height: 100vh; display: flex; align-items: center; padding: 0 10%; }
+ .loc-badge { font-family: 'Fira Code'; color: var(--primary); font-size: 0.7rem; margin-bottom: 20px; letter-spacing: 3px; }
+ h1 { font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 800; line-height: 1; margin-bottom: 25px; }
+ .outline { -webkit-text-stroke: 1px #fff; color: transparent; }
+ .glow { color: var(--primary); text-shadow: 0 0 30px rgba(0, 255, 65, 0.4); }
+ .description { max-width: 600px; color: #888; font-size: 1.1rem; margin-bottom: 40px; line-height: 1.6; }
+ 
+ /* Buttons */
+ button { padding: 16px 35px; border-radius: 4px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; }
+ .btn-primary { background: var(--primary); color: #000; }
+ .btn-outline { background: transparent; border: 1px solid var(--border); color: #fff; margin-left: 15px; }
+ .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 255, 65, 0.3); }
+ 
+ /* Grid Cards */
+ .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+ .card { background: var(--glass); border: 1px solid var(--border); padding: 40px; border-radius: 15px; transition: 0.3s; }
+ .card:hover { border-color: var(--primary); transform: translateY(-10px); background: rgba(0, 255, 65, 0.02); }
+ .cyber { border-color: #7000ff33; }
+ .cyber:hover { border-color: #7000ff; }
+ 
+ /* Certifications List */
+ .certs-container { display: flex; flex-direction: column; gap: 15px; }
+ .cert-item { background: var(--glass); padding: 20px 30px; border-radius: 8px; border-left: 3px solid var(--primary); font-family: 'Fira Code'; font-size: 0.9rem; }
+ .plat { color: var(--primary); font-weight: bold; margin-right: 15px; }
+ .gold { border-left-color: #ffd700; }
+ .gold .plat { color: #ffd700; }
+ 
+ @keyframes load { to { width: 100%; } }
