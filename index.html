@@ -3,50 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahriyor | UI Architect & Defender</title>
+    <title>SHAKH | Digital Architect & Defender</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="loading">
 
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <div id="intro-overlay">
+        <div class="scanner-text">
+            <p id="status-line">> Initializing secure channel...</p>
+            <p id="status-line">> Bypassing Khorezm_Node_Firewall...</p>
+            <p id="status-line">> Accessing Shakh's Core Data...</p>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+    </div>
 
+    <canvas id="matrix-canvas"></canvas>
     <canvas id="globe-canvas"></canvas>
 
     <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">SHAHRIYOR<span>.IO</span></div>
-            <div class="nav-links">
-                <a href="#projects" data-text="Works">Works</a>
-                <a href="#skills" data-text="Tech">Tech</a>
-                <div class="contact-pill">_available_for_work</div>
-            </div>
+        <div class="logo">SHAKH<span>.EXE</span></div>
+        <div class="nav-links">
+            <a href="#stats">_stats</a>
+            <a href="#terminal">_recon</a>
+            <div class="status-indicator"><span class="dot"></span> ONLINE</div>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="hero-inner">
-            <div class="experience-badge">5 YEARS OF EXCELLENCE</div>
-            <h1 class="main-title">
-                Crafting <span class="text-reveal">Digital</span> <br>
-                Safeguarding <span class="text-glow">Reality.</span>
-            </h1>
-            <p class="hero-subtext">
-                I am a <b>Frontend Architect</b> specializing in React ecosystems. 
-                My code is built with a <b>Cyber Security</b> mindset—clean, efficient, and impenetrable.
+        <div class="hero-content">
+            <div class="loc-tag">📍 KHOREZM, UZBEKISTAN</div>
+            <h1>CODE <span class="outline">CREATES</span><br><span class="glow">SECURITY</span> PROTECTS</h1>
+            <p class="description">
+                5+ years of engineering high-end UI/UX. Currently bridging the gap between 
+                <b>Frontend Excellence</b> and <b>Cyber Security</b>.
             </p>
-            <div class="hero-btns">
-                <button class="btn-primary">View Projects</button>
-                <button class="btn-outline">Read Story</button>
+            <div class="hero-actions">
+                <button class="btn-main" onclick="window.location.href='mailto:shakh2616@gmail.com'">EXECUTE CONTACT</button>
+                <button class="btn-sub">VIEW ARCHIVE</button>
             </div>
         </div>
     </section>
 
-    <div class="security-tag">
-        <div class="scanner-line"></div>
-        SECURED BY BABAXANOV ENGINE
-    </div>
+    <section id="stats" class="stats-section">
+        <h2 class="sec-title">_activity_report</h2>
+        <div class="stats-grid">
+            <img src="https://streak-stats.demolab.com?user=shakhriyor-dev&theme=aura&hide_border=true" alt="Streak">
+            <img src="https://github-readme-activity-graph.vercel.app/graph?username=shakhriyor-dev&theme=chartreuse-dark&area=true&hide_border=true" alt="Graph">
+        </div>
+    </section>
+
+    <section id="terminal" class="terminal-area">
+        <div class="kali-box">
+            <div class="k-header"><span></span><span></span><span></span><p>root@shakh:~</p></div>
+            <div class="k-body">
+                <p><span class="p-user">┌──(root㉿kali)-[~/recon]</span></p>
+                <p><span class="p-user">└─$</span> sudo ./show_skills.sh</p>
+                <div class="skills-orbit">
+                    <span class="orbit-item">React</span>
+                    <span class="orbit-item">Python</span>
+                    <span class="orbit-item">Kali</span>
+                    <span class="orbit-item">UI/UX</span>
+                    <span class="orbit-item">Git</span>
+                </div>
+                <p class="k-msg">ACCESS GRANTED. System secured by Shakhriyor Babaxanov.</p>
+            </div>
+        </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
