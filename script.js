@@ -1,39 +1,19 @@
-// 1. Tilt (Egilish) Effekti - Faqat Hero Card uchun
-const tiltCard = document.getElementById('tilt');
-
-tiltCard.addEventListener('mousemove', (e) => {
-    const rect = tiltCard.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    const rotateX = (y - centerY) / 15;
-    const rotateY = (centerX - x) / 15;
-    
-    tiltCard.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-});
-
-tiltCard.addEventListener('mouseleave', () => {
-    tiltCard.style.transform = 'rotateX(0) rotateY(0)';
-    tiltCard.style.transition = '0.5s';
-});
-
-// 2. Scroll Reveal (Elementlar pastdan chiqishi)
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.project-card').forEach(card => {
-    card.classList.add('hidden');
-    observer.observe(card);
-});
-
-// CSS-ga qo'shimcha:
-// .hidden { opacity: 0; transform: translateY(50px); transition: 1s; }
-// .show { opacity: 1; transform: translateY(0); }
+// 1. Mouse Tracking Effect (Neon nur)
+document.addEventListener('mousemove', (e) => {
+     const bg = document.querySelector('.cyber-bg');
+     const x = (e.clientX / window.innerWidth) * 50;
+     const y = (e.clientY / window.innerHeight) * 50;
+     bg.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, #1a1a2e 0%, #0a0a0c 40%)`;
+ });
+ 
+ // 2. Typing Effect for Terminal
+ const text = "Protecting the world from invisible hands...";
+ let i = 0;
+ function typeEffect() {
+     if (i < text.length) {
+         document.querySelector('.typing').innerHTML = text.substring(0, i+1) + '<span class="cursor">|</span>';
+         i++;
+         setTimeout(typeEffect, 100);
+     }
+ }
+ window.onload = typeEffect;
