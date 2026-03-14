@@ -3,62 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahriyor Babaxanov | Digital Defender</title>
+    <title>Shahriyor | UI Architect & Defender</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div id="globe-container">
-        <canvas id="globe-canvas"></canvas>
-    </div>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <canvas id="globe-canvas"></canvas>
 
     <nav class="navbar">
-        <div class="logo">SHAHRIYOR<span>.SHIELD</span></div>
-        <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#projects">Archive</a>
-            <a href="#about">Terminal</a>
-            <a href="#contact" class="nav-btn">_connect</a>
+        <div class="nav-content">
+            <div class="logo">SHAHRIYOR<span>.IO</span></div>
+            <div class="nav-links">
+                <a href="#projects" data-text="Works">Works</a>
+                <a href="#skills" data-text="Tech">Tech</a>
+                <div class="contact-pill">_available_for_work</div>
+            </div>
         </div>
     </nav>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <div class="badge">
-                    <span class="blink">●</span> 5 YEARS EXPERIENCE | CYBER SECURITY STUDENT
-                </div>
-                <h1>Defending the world from <br><span class="glitch">Invisible Hands</span></h1>
-                <p>I am a <strong>Frontend Architect</strong> with a passion for UI/UX, currently mastering <strong>Python</strong> and <strong>Kali Linux</strong> to build a secure digital future.</p>
-                <div class="actions">
-                    <button class="btn-primary">Explore Projects</button>
-                    <button class="btn-secondary">Download CV</button>
-                </div>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="experience-badge">5 YEARS OF EXCELLENCE</div>
+            <h1 class="main-title">
+                Crafting <span class="text-reveal">Digital</span> <br>
+                Safeguarding <span class="text-glow">Reality.</span>
+            </h1>
+            <p class="hero-subtext">
+                I am a <b>Frontend Architect</b> specializing in React ecosystems. 
+                My code is built with a <b>Cyber Security</b> mindset—clean, efficient, and impenetrable.
+            </p>
+            <div class="hero-btns">
+                <button class="btn-primary">View Projects</button>
+                <button class="btn-outline">Read Story</button>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about" class="terminal-section">
-            <div class="terminal">
-                <div class="t-head">
-                    <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
-                    <span class="t-user">root@babaxanov:~#</span>
-                </div>
-                <div class="t-body">
-                    <p><span class="p-cmd">whoami</span></p>
-                    <p class="p-out">Shahriyor Babaxanov. Frontend Expert. Cyber Enthusiast.</p>
-                    <p><span class="p-cmd">ls --skills</span></p>
-                    <p class="p-out">[React, UI/UX, Python, Kali Linux, Automation]</p>
-                    <p><span class="p-cmd">cat goal.txt</span></p>
-                    <p class="p-out">"To protect the digital world and become an indispensable human asset."</p>
-                    <p class="typing">System check: <span class="safe">SECURED</span> <span class="cursor">_</span></p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div class="security-status">
-        STATUS: <span class="green-text">PROTECTED BY BABAXANOV</span>
+    <div class="security-tag">
+        <div class="scanner-line"></div>
+        SECURED BY BABAXANOV ENGINE
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

@@ -1,70 +1,102 @@
 :root {
-     --bg: #030305;
+     --bg: #030303;
      --primary: #00ffaa;
-     --accent: #7000ff;
-     --text: #e2e8f0;
-     --border: rgba(0, 255, 170, 0.15);
+     --accent: #6e00ff;
+     --glass: rgba(255, 255, 255, 0.03);
+     --border: rgba(255, 255, 255, 0.08);
+     --font-main: 'Plus Jakarta Sans', sans-serif;
+     --font-mono: 'JetBrains Mono', monospace;
  }
  
- * { margin: 0; padding: 0; box-sizing: border-box; }
+ * { margin: 0; padding: 0; box-sizing: border-box; cursor: none; } /* Standart kursorni o'chiramiz */
+ 
  body {
-     background: var(--bg);
-     color: var(--text);
-     font-family: 'Space Grotesk', sans-serif;
+     background-color: var(--bg);
+     color: #fff;
+     font-family: var(--font-main);
      overflow-x: hidden;
+     line-height: 1.5;
  }
  
- /* 3D Globe Style */
- #globe-container {
-     position: fixed;
-     right: -10%;
-     top: 10%;
-     width: 700px;
-     height: 700px;
-     z-index: -1;
-     opacity: 0.6;
+ /* Custom Cursor */
+ .cursor {
+     width: 8px; height: 8px; background: var(--primary);
+     border-radius: 50%; position: fixed; pointer-events: none; z-index: 9999;
+ }
+ .cursor-follower {
+     width: 30px; height: 30px; border: 1px solid var(--primary);
+     border-radius: 50%; position: fixed; pointer-events: none;
+     z-index: 9998; transition: transform 0.1s ease-out, opacity 0.3s;
+     opacity: 0.5;
  }
  
- /* Navigation */
+ /* 3D Globe Positioning */
+ #globe-canvas {
+     position: fixed; top: 0; right: -150px; width: 100vw; height: 100vh;
+     z-index: -1; opacity: 0.4; filter: blur(1px);
+ }
+ 
+ /* Navbar */
  .navbar {
-     display: flex; justify-content: space-between; align-items: center;
-     padding: 30px 8%; position: fixed; width: 100%; z-index: 100;
-     backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+     position: fixed; top: 0; width: 100%; padding: 30px 10%; z-index: 1000;
  }
- .logo { font-weight: 800; font-size: 1.5rem; letter-spacing: 2px; }
- .logo span { color: var(--primary); text-shadow: 0 0 10px var(--primary); }
- .nav-links a { text-decoration: none; color: #888; margin-left: 30px; font-size: 0.9rem; transition: 0.3s; }
+ .nav-content {
+     display: flex; justify-content: space-between; align-items: center;
+     background: var(--glass); backdrop-filter: blur(20px);
+     padding: 15px 30px; border-radius: 100px; border: 1px solid var(--border);
+ }
+ .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; }
+ .logo span { color: var(--primary); }
+ 
+ .nav-links { display: flex; align-items: center; gap: 30px; }
+ .nav-links a {
+     color: #888; text-decoration: none; font-size: 0.8rem; 
+     font-family: var(--font-mono); transition: 0.3s;
+ }
  .nav-links a:hover { color: var(--primary); }
  
- /* Hero */
- .hero { height: 100vh; display: flex; align-items: center; padding: 0 8%; }
- .badge { background: rgba(0, 255, 170, 0.1); border: 1px solid var(--border); padding: 8px 15px; border-radius: 5px; color: var(--primary); font-family: 'JetBrains Mono'; font-size: 0.7rem; }
- .blink { animation: blink 1s infinite; }
- h1 { font-size: 5rem; font-weight: 800; margin: 20px 0; line-height: 1.1; }
- .glitch { color: var(--primary); text-shadow: 3px 3px var(--accent); }
- p { max-width: 600px; color: #94a3b8; font-size: 1.2rem; margin-bottom: 30px; }
+ .contact-pill {
+     font-size: 0.7rem; color: var(--primary); border: 1px solid var(--primary);
+     padding: 5px 15px; border-radius: 50px; background: rgba(0, 255, 170, 0.05);
+ }
+ 
+ /* Hero Section */
+ .hero { height: 100vh; display: flex; align-items: center; padding: 0 10%; }
+ .hero-inner { max-width: 900px; }
+ 
+ .experience-badge {
+     font-family: var(--font-mono); color: var(--primary); font-size: 0.7rem;
+     letter-spacing: 3px; border-left: 2px solid var(--primary);
+     padding-left: 15px; margin-bottom: 20px;
+ }
+ 
+ h1 { font-size: 6rem; font-weight: 800; line-height: 1; margin-bottom: 30px; letter-spacing: -3px; }
+ .text-reveal { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.3); }
+ .text-glow { color: var(--primary); text-shadow: 0 0 50px rgba(0, 255, 170, 0.4); }
+ 
+ .hero-subtext {
+     font-size: 1.2rem; color: #94a3b8; max-width: 550px; margin-bottom: 40px;
+ }
  
  /* Buttons */
- button { padding: 15px 35px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s; }
- .btn-primary { background: var(--primary); border: none; color: #000; margin-right: 15px; }
- .btn-primary:hover { box-shadow: 0 0 25px var(--primary); transform: translateY(-3px); }
- .btn-secondary { background: transparent; border: 1px solid var(--border); color: #fff; }
- 
- /* Terminal */
- .terminal {
-     background: #000; border: 1px solid var(--border); border-radius: 10px;
-     max-width: 700px; margin: 100px 8%; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+ .hero-btns { display: flex; gap: 20px; }
+ button {
+     padding: 18px 40px; border-radius: 12px; font-weight: 700;
+     font-family: var(--font-main); transition: 0.4s; border: none;
  }
- .t-head { background: #111; padding: 10px; display: flex; gap: 8px; align-items: center; }
- .t-dot { width: 12px; height: 12px; border-radius: 50%; }
- .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
- .t-user { font-family: 'JetBrains Mono'; font-size: 0.7rem; color: #555; }
- .t-body { padding: 30px; font-family: 'JetBrains Mono'; font-size: 0.9rem; }
- .p-cmd { color: var(--accent); }
- .p-out { color: #888; margin-bottom: 15px; }
- .safe { color: var(--primary); font-weight: bold; }
+ .btn-primary { background: #fff; color: #000; }
+ .btn-primary:hover { background: var(--primary); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0, 255, 170, 0.2); }
+ .btn-outline { background: transparent; border: 1px solid var(--border); color: #fff; }
+ .btn-outline:hover { background: var(--glass); border-color: #fff; }
  
- .security-status { position: fixed; bottom: 30px; left: 30px; font-family: 'JetBrains Mono'; font-size: 0.7rem; color: #444; }
- .green-text { color: var(--primary); }
+ /* Security Tag */
+ .security-tag {
+     position: fixed; bottom: 40px; left: 10%; font-family: var(--font-mono);
+     font-size: 0.6rem; color: #444; letter-spacing: 2px; overflow: hidden;
+ }
+ .scanner-line {
+     width: 100%; height: 1px; background: var(--primary);
+     position: absolute; top: 0; left: 0; animation: scan 2s linear infinite;
+ }
  
- @keyframes blink { 50% { opacity: 0; } }
+ @keyframes scan { 0% { transform: translateY(-10px); } 100% { transform: translateY(20px); } }
