@@ -1,11 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz">
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio Website | Frontend Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-     
+
+    <div class="bg-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">MY<span>PORTFOLIO</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Asosiy</a></li>
+            <li><a href="#projects">Loyihalar</a></li>
+            <li><a href="#about">Men haqimda</a></li>
+            <li><a href="#contact" class="nav-btn">Bog'lanish</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-card" id="tilt">
+            <span class="badge">Frontend Developer</span>
+            <h1>Sifatli Kod & <br><span class="gradient-text">Mukammal Dizayn</span></h1>
+            <p>Men zamonaviy texnologiyalar yordamida foydalanuvchilar uchun qulay va interfaol web-ilovalarni yarataman.</p>
+            <div class="hero-btns">
+                <button class="btn-primary">Ishlarimni ko'ring</button>
+                <button class="btn-secondary">CV Yuklab olish</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="section-title">Tanlangan Loyihalar</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <span class="tech-stack">React • Node.js</span>
+                    <h3>Online Shop Platform</h3>
+                    <p>To'lov tizimi va murakkab filtrlar bilan jihozlangan do'kon ilovasi.</p>
+                    <a href="#" class="view-link">Loyihani ko'rish →</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img"></div>
+                <div class="project-info">
+                    <span class="tech-stack">JS • API • CSS</span>
+                    <h3>Weather Analytics</h3>
+                    <p>Dunyo bo'ylab ob-havo ma'lumotlarini real vaqtda ko'rsatuvchi dashboard.</p>
+                    <a href="#" class="view-link">Loyihani ko'rish →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer">
+        <div class="footer-content">
+            <h2>Keling, birga ishlaymiz!</h2>
+            <p>Loyiha takliflari yoki savollar uchun doim ochiqman.</p>
+            <div class="social-icons">
+                <a href="#">Telegram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">GitHub</a>
+            </div>
+            <p class="copyright">© 2026 My Portfolio Website. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
