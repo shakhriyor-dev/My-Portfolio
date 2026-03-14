@@ -3,59 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shahriyor Babaxanov | Frontend & Cyber Security</title>
+    <title>Shahriyor Babaxanov | Digital Defender</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="cyber-bg"></div>
+    <div id="globe-container">
+        <canvas id="globe-canvas"></canvas>
+    </div>
 
     <nav class="navbar">
-        <div class="logo">SHAHRIYOR<span>.DEV</span></div>
+        <div class="logo">SHAHRIYOR<span>.SHIELD</span></div>
         <div class="nav-links">
             <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact" class="btn-terminal">_contact_me</a>
+            <a href="#projects">Archive</a>
+            <a href="#about">Terminal</a>
+            <a href="#contact" class="nav-btn">_connect</a>
         </div>
     </nav>
 
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <div class="status-tag">
-                    <span class="blink">●</span> 5 Years Experience | Cyber Student
+                <div class="badge">
+                    <span class="blink">●</span> 5 YEARS EXPERIENCE | CYBER SECURITY STUDENT
                 </div>
-                <h1>Defending the world from <br><span class="glitch-text">Invisible Hands</span></h1>
-                <p>I am a <strong>Frontend Engineer</strong> with 5 years of mastery in UI/UX, currently arming myself with <strong>Python</strong> and <strong>Kali Linux</strong> to build a safer digital future.</p>
-                <div class="hero-actions">
-                    <button class="btn-main">View Archive</button>
-                    <button class="btn-ghost">Download CV</button>
+                <h1>Defending the world from <br><span class="glitch">Invisible Hands</span></h1>
+                <p>I am a <strong>Frontend Architect</strong> with a passion for UI/UX, currently mastering <strong>Python</strong> and <strong>Kali Linux</strong> to build a secure digital future.</p>
+                <div class="actions">
+                    <button class="btn-primary">Explore Projects</button>
+                    <button class="btn-secondary">Download CV</button>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="skills-section">
-            <div class="terminal-card">
-                <div class="terminal-header">
-                    <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
-                    <p>root@babaxanov:~/skills</p>
+        <section id="about" class="terminal-section">
+            <div class="terminal">
+                <div class="t-head">
+                    <span class="t-dot red"></span><span class="t-dot yellow"></span><span class="t-dot green"></span>
+                    <span class="t-user">root@babaxanov:~#</span>
                 </div>
-                <div class="terminal-body">
-                    <p><span class="cmd">ls -a frontend/</span> [React, JS, UI/UX, Tailwind]</p>
-                    <p><span class="cmd">ls -a programming/</span> [Python, Scripting, Automation]</p>
-                    <p><span class="cmd">ls -a security/</span> [Kali Linux, Ethical Hacking, Network]</p>
-                    <p class="typing">Developing secure interfaces... <span class="cursor">|</span></p>
+                <div class="t-body">
+                    <p><span class="p-cmd">whoami</span></p>
+                    <p class="p-out">Shahriyor Babaxanov. Frontend Expert. Cyber Enthusiast.</p>
+                    <p><span class="p-cmd">ls --skills</span></p>
+                    <p class="p-out">[React, UI/UX, Python, Kali Linux, Automation]</p>
+                    <p><span class="p-cmd">cat goal.txt</span></p>
+                    <p class="p-out">"To protect the digital world and become an indispensable human asset."</p>
+                    <p class="typing">System check: <span class="safe">SECURED</span> <span class="cursor">_</span></p>
                 </div>
             </div>
         </section>
     </main>
 
-    <div class="security-badge">
-        <p>SYSTEM STATUS: <span class="safe">SECURED</span></p>
+    <div class="security-status">
+        STATUS: <span class="green-text">PROTECTED BY BABAXANOV</span>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
